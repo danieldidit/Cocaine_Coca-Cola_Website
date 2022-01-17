@@ -1,0 +1,1187 @@
+/*******************/
+/* General Styling */
+/*******************/
+
+/*Gives the body a default margin of 0px*/
+body {
+  margin: 0px;
+}
+/*Sets the font family for the headings*/
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Montserrat', sans-serif;
+}
+/*Sets a general font family and font size for the p, a and form*/
+p,a,form{
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+/***********************/
+/***** header.html *****/
+/***********************/
+
+/******************/
+/* Header Styling */
+/******************/
+/*Lets the header display flex and aligns the items to the center. Gives the header a height of 95px and fixes it to the top of the screen*/
+header {
+  display: flex;
+  align-items: center;
+  height: 95px;
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+  z-index: 1000;
+}
+/*Sends the nav to the far right side of the page*/
+header > div{
+  height: 100px;
+}
+/*Makes the logo 100% the height of the header*/
+header > div > a > img{
+  height: 100%;
+  width: auto;
+}
+/*Adds space between the nav and the right wall of the page*/
+header > nav{
+  padding-right: 35px;
+}
+/*Displays the nav horizontally and removes its list styling*/
+header > nav > ul{
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+/*Adds some space between each nav button*/
+header > nav > ul > li{
+  padding: 0px 10px;
+}
+/*Removes the underline and makes the text black*/
+header > nav > ul > li > a{
+  text-decoration: none;
+  color: #000;
+}
+/***************************/
+/*Header Responsive Styling*/
+/***************************/
+
+/*Adjusts the 1200 pixel width*/
+@media screen and (max-width: 1200px){
+  /*None Needed*/
+}
+
+/*Adjusts the 1024 pixel width*/
+@media screen and (max-width: 1024px){
+  /*None Needed*/
+}
+
+/*Adjusts the 768 pixel width*/
+@media screen and (max-width: 768px){
+  /*None Needed*/
+}
+
+/*Adjusts the 600 pixel width*/
+@media screen and (max-width: 600px){
+  /*None Needed*/
+}
+
+/*Adjusts the 480 pixel width*/
+@media screen and (max-width: 480px){
+/*Header displays flex and is sorted into a column instead of rows. Height is now 200px*/
+header {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  }
+/*Makes the logo 150% the height of the header*/
+header > div > a > img{
+  height: 150%;
+  width: auto;
+  }
+}
+
+/*Adjusts the 320 pixel width*/
+@media screen and (max-width: 320px){
+  /*Lessens the padding between the li items*/
+  header > nav > ul > li {
+    padding: 0px 3px;
+  }
+}
+
+/**********************/
+/***** index.html *****/
+/**********************/
+
+/*****************/
+/* Index Styling */
+/*****************/
+
+/*Creates a basic grid for the entire index class. I will be creating a nested grid inside of the main*/
+.index{
+  display: grid;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+}
+/*Adds the header to grid area*/
+.index > header{
+  grid-area: header;
+}
+
+/*Creates a grid for the main section. This will contain the masthead and 2 rows of content*/
+.index > main {
+  grid-area: main;
+  display: grid;
+  grid-template-areas:
+  "masthead masthead"
+  "row1 row12"
+  "row2 row2";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 950px 700px 300px;
+}
+/*Adds the masthead to the grid area. Adds a background image and styles it's size*/
+.index > main > section:nth-child(1){
+  grid-area: masthead;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  flex-direction: column;
+  text-align: center;
+}
+/*Makes the h1 font size 60px*/
+.index > main > section:nth-child(1) > div > h1{
+  font-size: 60px;
+}
+/*Makes the width of the mastheadimage 60% of the page, and aligns it to the center*/
+.index > main > section:nth-child(1) > img{
+  width: 60%;
+  height: auto;
+  align-self: center;
+}
+/*Sets up a background image that will display the word Product, that users can click to goto the product page*/
+.index > main > section:nth-child(2){
+  grid-area: row1;
+  display: flex;
+  text-align: center;
+  background-image: url('../img/img-12.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  border-radius: 50px;
+  width: 80%;
+  height: 50%;
+  align-self: center;
+  justify-self: center;
+}
+/*Styles the heading that lays ontop of the the background image. Adds a transparent black background,
+  and uses flex to place it within the grid cell*/
+.index > main > section:nth-child(2) > a {
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/*Adds flex to the text and centers it within the image*/
+.index > main > section:nth-child(2) > a > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+/*Makes the heading 40px and white*/
+.index > main > section:nth-child(2) > a > div > h2{
+  font-size: 40px;
+  color: #fff;
+}
+/*Sets up a background image that will display the word Our Process, that users can click to goto the about page*/
+.index > main > section:nth-child(3){
+  grid-area: row12;
+  display: flex;
+  text-align: center;
+  background-image: url('../img/img-10.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  border-radius: 50px;
+  width: 80%;
+  height: 50%;
+  align-self: center;
+  justify-self: center;
+}
+/*Styles the heading that lays ontop of the the background image. Adds a transparent black background,
+  and uses flex to place it within the grid cell*/
+.index > main > section:nth-child(3) > a {
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/*Adds flex to the text and centers it within the image*/
+.index > main > section:nth-child(3) > a > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+/*Makes the heading 40px and white*/
+.index > main > section:nth-child(3) > a > div > h2{
+  font-size: 40px;
+  color: #fff;
+}
+/*Sets up a background image that will display the word Contact Us, that users can click to goto the contact page*/
+.index > main > section:nth-child(4){
+  grid-area: row2;
+  display: flex;
+  justify-content: center;
+  background-image: url('../img/img-11.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  justify-self: center;
+  border-radius: 50px;
+  height: fit-content;
+}
+/*Styles the heading that lays ontop of the the background image. Adds a transparent black background,
+  and uses flex to place it within the grid cell*/
+.index > main > section:nth-child(4) > a {
+  height: 100%;
+  width: 100%;
+  border-radius: 50px;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/*Adds flex to the text and centers it within the image*/
+.index > main > section:nth-child(4) > a > div{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-radius: 50px;
+}
+/*Makes the heading white*/
+.index > main > section:nth-child(4) > a > div > h2{
+  color: #fff;
+}
+/*Adds the footer to the parent grid area.*/
+.index > footer{
+  grid-area: footer;
+}
+
+/**************************/
+/*Index Responsive Styling*/
+/**************************/
+
+/*Adjusts the 1200 pixel width*/
+@media screen and (max-width: 1200px){
+  .index main{
+    /*Adjusts the size of the rows to better suit the screen size*/
+    grid-template-rows: 760px 500px 120px;
+  }
+}
+
+/*Adjusts the 1024 pixel width*/
+@media screen and (max-width: 1024px){
+  /*None Needed*/
+}
+
+/*Adjusts the 768 pixel width*/
+@media screen and (max-width: 768px){
+  /*Adjusts the size of the image to better suit the screen size*/
+  .index main section:nth-child(1) img{
+    width: 80%;
+  }
+}
+
+/*Adjusts the 600 pixel width*/
+@media screen and (max-width: 600px){
+  .index main {
+    /*Adjusts the size of the rows to better suit the screen size*/
+    grid-template-rows: 600px 500px 120px;
+  }
+}
+
+/*Adjusts the 480 pixel width*/
+@media screen and (max-width: 480px){
+  .index main {
+    /*Adjusts the size of the rows to better suit the screen size*/
+    grid-template-rows: 598px 288px 120px;
+  }
+  /*Adds more height and margintop to the masthead*/
+  .index > main > section:nth-child(1){
+    margin-top: 249px;
+    height: 324px;
+  }
+  /*Makes the font size of the masthead 40px*/
+  .index > main > section:nth-child(1) > div > h1 {
+    font-size: 40px;
+  }
+  /*Makes the font size 30px*/
+  .index > main > section:nth-child(2) > a > div > h2 {
+    font-size: 30px;
+  }
+  /*Makes the font size 30px*/
+.index > main > section:nth-child(3) > a > div > h2 {
+    font-size: 30px;
+  }
+  /*Makes the font size 30px*/
+.index > main > section:nth-child(4) > a > div > h2 {
+    font-size: 30px;
+  }
+}
+
+/*Adjusts the 320 pixel width*/
+@media screen and (max-width: 320px){
+  /*Makes the font size of the masthead 30px*/
+  .index > main > section:nth-child(1) > div > h1 {
+    font-size: 30px;
+  }
+  /*Makes the font size 20px*/
+  .index > main > section:nth-child(2) > a > div > h2 {
+    font-size: 20px;
+  }
+  /*Makes the font size 20px*/
+.index > main > section:nth-child(3) > a > div > h2 {
+    font-size: 20px;
+  }
+  /*Makes the font size 20px*/
+.index > main > section:nth-child(4) > a > div > h2 {
+    font-size: 20px;
+  }
+}
+
+/**********************/
+/***** about.html *****/
+/**********************/
+
+/*****************/
+/* About Styling */
+/*****************/
+
+/*Creates a basic grid for the entire grid class. I will be creating a nested grid inside of the main*/
+.about{
+  display: grid;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+}
+/*Adds the header to grid area and adds some basic stying*/
+.about > header{
+  grid-area: header;
+}
+/*Creates a grid for the main section. This will contain the masthead and all 3 rows of content*/
+.about > main {
+  grid-area: main;
+  display: grid;
+  grid-template-areas:
+  "masthead masthead"
+  "row1 row1"
+  "row2 row2"
+  "row3 row3";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 800px 700px 700px 700px;
+/*Adds the masthead to the grid area. Adds a background image and styles it's size and position*/
+}
+.about > main > section:nth-child(1){
+  grid-area: masthead;
+  display: flex;
+  justify-content: center;
+  background-image: url('../img/img-6.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-top: 100px;
+  width: 90%;
+  justify-self: center;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+/*Covers the image with a transparent black backgroudn color*/
+.about > main > section:nth-child(1) > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  border-radius: 50px;
+}
+/*Makes the font size 100px and white*/
+.about > main > section:nth-child(1) > div > h2{
+  color: #fff;
+  font-size: 100px;
+}
+/*Adds the first row background image and sizes/positions it*/
+.about > main > section:nth-child(2){
+  grid-area: row1;
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  background-image: url('../img/img-7.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 90%;
+  justify-self: center;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+/*Covers the image with a transparent black backgroudn color*/
+.about > main > section:nth-child(2) > div{
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
+}
+/*positions the aside within the image*/
+.about > main > section:nth-child(2) >  div > aside{
+  width: 85%;
+  justify-self: center;
+  width: 50%;
+  padding-right: 20px;
+}
+/*Makes the h2 font size 45px and brings it closer to the paragraph*/
+.about > main > section:nth-child(2) > div  > aside > h2{
+  font-size: 45px;
+  margin-bottom: -40px;
+  color: #fff;
+}
+/*Makes the paragraph font size 25 px and gives it a rounded transparent red background color*/
+.about > main > section:nth-child(2) > div > aside > p{
+font-size: 25px;
+background-color: rgba(244, 0, 9, 0.8);
+color: #000;
+padding: 50px;
+text-align: left;
+border-radius: 25px;
+}
+/**Adds the second row background image and sizes/positions it**/
+.about > main > section:nth-child(3){
+  grid-area: row2;
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  background-image: url('../img/img-8.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 90%;
+  justify-self: center;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+/*Covers the image with a transparent black backgroudn color*/
+.about > main > section:nth-child(3) > div{
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
+}
+/*positions the aside within the image*/
+.about > main > section:nth-child(3) > div > aside{
+  width: 85%;
+  justify-self: center;
+  width: 50%;
+  padding-left: 20px;
+}
+/*Makes the h2 font size 45px and brings it closer to the paragraph*/
+.about > main > section:nth-child(3) > div > aside > h2{
+  font-size: 45px;
+  margin-bottom: -40px;
+  color: #fff;
+}
+/*Makes the paragraph font size 25 px and gives it a rounded transparent red background color*/
+.about > main > section:nth-child(3) > div > aside > p{
+font-size: 25px;
+background-color: rgba(244, 0, 9, 0.8);
+color: #000;
+padding: 50px;
+text-align: left;
+border-radius: 25px;
+}
+/**Adds the third row background image and sizes/positions it**/
+.about > main > section:nth-child(4){
+  grid-area: row3;
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  background-image: url('../img/img-9.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 90%;
+  justify-self: center;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+/*Covers the image with a transparent black backgroudn color*/
+.about > main > section:nth-child(4) > div{
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
+
+}
+/*positions the aside within the image*/
+.about > main > section:nth-child(4) >  div > aside{
+  width: 85%;
+  justify-self: center;
+  width: 50%;
+  padding-right: 20px;
+}
+/*Makes the h2 font size 45px and brings it closer to the paragraph*/
+.about > main > section:nth-child(4) > div  > aside > h2{
+  font-size: 45px;
+  margin-bottom: -40px;
+  color: #fff;
+}
+/*Makes the paragraph font size 25 px and gives it a rounded transparent red background color*/
+.about > main > section:nth-child(4) > div > aside > p{
+font-size: 25px;
+background-color: rgba(244, 0, 9, 0.8);
+color: #000;
+padding: 50px;
+text-align: left;
+border-radius: 25px;
+}
+/*Adds the footer to the parent grid area*/
+.about > footer{
+  grid-area: footer;
+}
+
+/**************************/
+/*About Responsive Styling*/
+/**************************/
+
+/*Adjusts the 1200 pixel width*/
+@media screen and (max-width: 1200px){
+  /*None Needed*/
+}
+
+/*Adjusts the 1024 pixel width*/
+@media screen and (max-width: 1024px){
+  /*Makes the font size 80px*/
+  .about > main > section:nth-child(1) > div > h2 {
+    font-size: 80px;
+  }
+  /*Makes the font-size 20px*/
+  .about > main > section:nth-child(2) > div > aside > p {
+    font-size: 20px;
+  }
+  /*Makes the font-size 20px*/
+  .about > main > section:nth-child(3) > div > aside > p {
+    font-size: 20px;
+  }
+  /*Makes the font-size 20px*/
+  .about > main > section:nth-child(4) > div > aside > p {
+    font-size: 20px;
+  }
+}
+
+/*Adjusts the 768 pixel width*/
+@media screen and (max-width: 768px){
+  /*Makes the font size 60px*/
+  .about > main > section:nth-child(1) > div > h2 {
+    font-size: 60px;
+  }
+  /*Makes the font size 18px*/
+  .about > main > section:nth-child(2) > div > aside > p {
+    font-size: 18px;
+  }
+  /*Makes the font size 18px*/
+  .about > main > section:nth-child(3) > div > aside > p {
+    font-size: 18px;
+  }
+  /*Makes the font size 18px*/
+  .about > main > section:nth-child(4) > div > aside > p {
+    font-size: 18px;
+  }
+
+}
+
+/*Adjusts the 600 pixel width*/
+@media screen and (max-width: 600px){
+  /*Makes the font size 50px*/
+  .about > main > section:nth-child(1) > div > h2 {
+    font-size: 50px;
+  }
+  /*Makes the width 60%*/
+  .about > main > section:nth-child(2) > div > aside{
+    width: 60%;
+  }
+  /*Makes the font size 16px*/
+  .about > main > section:nth-child(2) > div > aside > p {
+    font-size: 16px;
+  }
+  /*Makes the width 60%*/
+  .about > main > section:nth-child(3) > div > aside{
+    width: 60%;
+  }
+  /*Makes the font size 16px*/
+  .about > main > section:nth-child(3) > div > aside > p {
+    font-size: 16px;
+  }
+  /*Makes the width 60%*/
+  .about > main > section:nth-child(4) > div > aside{
+    width: 60%;
+  }
+  /*Makes the font size 16px*/
+  .about > main > section:nth-child(4) > div > aside > p {
+    font-size: 16px;
+  }
+}
+
+/*Adjusts the 480 pixel width*/
+@media screen and (max-width: 480px){
+  /*Makes the margin top 200px*/
+  .about > main > section:nth-child(1) {
+    margin-top: 200px;
+  }
+  /*Makes the font size 40px*/
+  .about > main > section:nth-child(1) > div > h2 {
+    font-size: 40px;
+  }
+  /*Makes the width 80%*/
+  .about > main > section:nth-child(2) > div > aside {
+    width: 80%;
+  }
+  /*Makes the width 80%*/
+  .about > main > section:nth-child(3) > div > aside {
+    width: 80%;
+  }
+  /*Makes the width 80%*/
+  .about > main > section:nth-child(4) > div > aside {
+    width: 80%;
+  }
+}
+
+/*Adjusts the 320 pixel width*/
+@media screen and (max-width: 320px){
+  /*Makes the font size 25px*/
+  .about > main > section:nth-child(1) > div > h2 {
+    font-size: 25px;
+  }
+  /*Makes the width 100%*/
+  .about > main > section:nth-child(2) > div > aside {
+    width: 100%;
+  }
+  /*Makes the font size 30px*/
+  .about > main > section:nth-child(2) > div > aside > h2 {
+    font-size: 30px;
+  }
+  /*Makes the width 100%*/
+  .about > main > section:nth-child(3) > div > aside {
+    width: 100%;
+  }
+  /*Makes the font size 30px*/
+  .about > main > section:nth-child(3) > div > aside > h2 {
+    font-size: 30px;
+  }
+  /*Makes the width 100%*/
+  .about > main > section:nth-child(4) > div > aside {
+    width: 100%;
+  }
+  /*Makes the font size 30px*/
+  .about > main > section:nth-child(4) > div > aside > h2 {
+    font-size: 30px;
+  }
+}
+
+/***********************/
+/***** product.html *****/
+/***********************/
+
+/******************/
+/* Product Styling */
+/******************/
+
+/*Creates a grid for the page*/
+.product > main {
+  display: grid;
+  grid-template-areas:
+  "image aside";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 920px;
+}
+/*Adds the background image for the first section, sizes it and positions it*/
+.product > main > section:nth-child(1){
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+  background-image: url('../img/img-12.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-top: 100px;
+  width: 90%;
+  justify-self: center;
+  border-radius: 50px;
+/*Further positions and sizes the div*/
+}
+.product > main > section:nth-child(1) > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 50px;
+}
+/*Makes the image height 80%*/
+.product > main > section:nth-child(1) > div > img{
+  width: auto;
+  height: 80%;
+}
+/*Adds the second section that will contain the product information. Sizes and positions the section. Gives the section an outline*/
+.product > main > section:nth-child(2){
+  grid-area: aside;
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  width: 90%;
+  justify-self: center;
+  border-radius: 50px;
+  margin-top: 100px;
+  outline: solid;
+}
+/*Further positions and sizes the div. Aligns the text to the center*/
+.product > main > section:nth-child(2) > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-radius: 50px;
+  flex-direction: column;
+  text-align: center;
+}
+/*Adds some space to either side of the text with width, and uses justify-self center it within the grid cell*/
+.product > main > section:nth-child(2) >  div > aside{
+  justify-self: center;
+  width: 70%;
+  padding-right: 20px;
+}
+/*Changes the font size to 35px*/
+.product > main > section:nth-child(2) >  div > aside > h2{
+  font-size: 35px;
+}
+/*Makes the paragraph font size 25px and makes it black with some padding*/
+.product > main > section:nth-child(2) > div > aside > p{
+font-size: 25px;
+color: #000;
+padding: 50px;
+text-align: center;
+border-radius: 25px;
+}
+/*Makes the h2 font size larger and brings it closer to the phone number*/
+.product > main > section:nth-child(2) > div:nth-child(2) > h2{
+  font-size: 45px;
+  margin-bottom: -40px;
+  color: #000;
+}
+/*Makes the phone number font size 25px*/
+.product > main > section:nth-child(2) > div:nth-child(2) > p{
+font-size: 25px;
+color: #000;
+padding: 50px;
+text-align: center;
+border-radius: 25px;
+}
+
+/****************************/
+/*Product Responsive Styling*/
+/****************************/
+
+/*Adjusts the 1200 pixel width*/
+@media screen and (max-width: 1200px){
+  /*None Needed*/
+}
+
+/*Adjusts the 1024 pixel width*/
+@media screen and (max-width: 1024px){
+  /*removes the right padding and makes the width 100%*/
+  .product > main > section:nth-child(2) > div > aside {
+    width: 100%;
+    padding-right: 0px;
+  }
+}
+
+/*Adjusts the 768 pixel width*/
+@media screen and (max-width: 768px){
+  /*Makes the font size 30px*/
+  .product > main > section:nth-child(2) > div > aside > h2 {
+    font-size: 30px;
+  }
+  /*Makes the font size 20px*/
+  .product > main > section:nth-child(2) > div > aside > p {
+    font-size: 20px;
+  }
+}
+
+/*Adjusts the 600 pixel width*/
+@media screen and (max-width: 600px){
+  /*Makes the font size 25px*/
+  .product > main > section:nth-child(2) > div > aside > h2 {
+    font-size: 25px;
+  }
+  /*Adds -50px margin bottom*/
+  .product > main > section:nth-child(2) > div > aside {
+    margin-bottom: -50px;
+  }
+}
+
+/*Adjusts the 480 pixel width*/
+@media screen and (max-width: 480px){
+  .product main{
+    /*Makes the main display in column instead of rows*/
+    display: flex;
+    flex-direction: column;
+  }
+  .product main section:nth-child(2){
+    /*Aligns to center and adds 110px margin top*/
+    margin-top:110px;
+    align-self: center;
+  }
+}
+
+/*Adjusts the 320 pixel width*/
+@media screen and (max-width: 320px){
+  /*None Needed*/
+}
+
+/************************/
+/***** contact.html *****/
+/************************/
+
+/*******************/
+/* Contact Styling */
+/*******************/
+
+/*Creates a grid for the contact page and overlays a background image across the whole page*/
+.contact main{
+  grid-area: main;
+  display: grid;
+  grid-template-areas:
+  "row1 row1"
+  "row2 row3";
+  grid-template-columns:50% 50%;
+  grid-template-rows: 200px 700px;
+  background-image: url('../img/img-14.jpg');
+  background-size: cover;
+  background-position: center;
+}
+/*Creates a section in row 1 and sizes/positions it*/
+.contact section:nth-child(1){
+  display: grid;
+  grid-area: row1;
+  margin-top: 100px;
+  color: #000;
+  text-align: center;
+  grid-template-rows: 50% 50%;
+}
+/*Changes the font size to 35px and adds 20 px padding to the top*/
+.contact section:nth-child(1) div h1{
+  padding-top: 10px;
+  font-size: 35px;
+}
+/*Changes the font size to 20px and adds 4 px padding to the top*/
+.contact section:nth-child(1) div h2{
+  font-size: 20px;
+  align-items: start;
+  padding-top: 4px;
+}
+
+/*Creates a section in row 2 and sizes/positions it*/
+.contact main section:nth-child(2) {
+    grid-area: row2;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    width: auto;
+}
+/*Adds a white transparent background color to the second section and rounds off the border as well as adds padding*/
+.contact main section:nth-child(2) div{
+    padding: 50px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 50px;
+}
+/*Makes the font size 30px and the height 10%*/
+.contact main section:nth-child(2) div h3{
+  color: #000;
+  font-size: 30px;
+  height: 10%;
+  width: auto;
+}
+/*Makes the font size 22px and removes any previous margin-top*/
+.contact main section:nth-child(2) div h4{
+  margin-top: 0px;
+  color: #000;
+  font-size: 22px;
+}
+/*Creates a section in row 3 and sizes/positions it*/
+.contact main section:nth-child(3){
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
+}
+/*styles the form*/
+.contact main section:nth-child(3) aside form{
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  text-align: center;
+  width: 120%;
+}
+/*Changes the font size to 32px and makes it roboto font*/
+.contact main section:nth-child(3) aside h3{
+  font-size: 32px;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+}
+/*Changes the font size to 24px and makes it roboto font*/
+.contact main section:nth-child(3) aside h4{
+  font-size: 24px;
+  color: #000;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+/*Input bar styling*/
+.contact main section:nth-child(3) aside input,
+.contact main section:nth-child(3) aside textarea{
+  width: 500px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #000;
+  font-size: 22px;
+  border-bottom: 1px solid #000;
+  font-family: 'Roboto', sans-serif;
+}
+
+/**************************/
+/*Contact Responsive Styling*/
+/**************************/
+
+/*Adjusts the 1200 pixel width*/
+@media screen and (max-width: 1200px){
+  /*Makes the width 70%*/
+  .contact main section:nth-child(3) {
+    width: 70%;
+  }
+}
+
+/*Adjusts the 1024 pixel width*/
+@media screen and (max-width: 1024px){
+  .contact main section:nth-child(2) div {
+    /*Adds 30px padding*/
+    padding: 30px;
+  }
+  /*Makes the width 100%*/
+  .contact main section:nth-child(3) aside {
+    width: 100%;
+  }
+  /*Makes the width 80%*/
+  .contact main section:nth-child(3) aside input,
+  .contact main section:nth-child(3) aside textarea{
+    width: 80%;
+  }
+}
+
+/*Adjusts the 768 pixel width*/
+@media screen and (max-width: 768px){
+  /*Adds 316px padding*/
+  .contact main section:nth-child(2) div {
+    padding: 16px;
+  }
+  /*Centers self and adds 25px padding to the right*/
+  .contact main section:nth-child(3) {
+    justify-self: center;
+    padding-right: 25px;
+  }
+}
+
+/*Adjusts the 600 pixel width*/
+@media screen and (max-width: 600px){
+  /*Displays the main in columns instead of rows*/
+  .contact main{
+    display: flex;
+    flex-direction: column;
+  }
+  /*Makes the width 80% and adds 12px padding*/
+  .contact main section:nth-child(3) {
+    width: 80%;
+    padding: 12px;
+  }
+}
+
+/*Adjusts the 480 pixel width*/
+@media screen and (max-width: 480px){
+  /*Makes the margin top 190px*/
+  .contact section:nth-child(1) {
+    margin-top: 190px;
+  }
+}
+
+/*Adjusts the 320 pixel width*/
+@media screen and (max-width: 320px){
+  /*Centers self and makes the width 80%*/
+  .contact section:nth-child(1) {
+    width: 80%;
+    align-self: center;
+  }
+  /*Makes the font size 25px*/
+  .contact main section:nth-child(2) div h3 {
+    font-size: 25px;
+  }
+  /*Makes the font size 18px*/
+  .contact main section:nth-child(2) div h4 {
+    font-size: 18px;
+  }
+  /*Makes the width 70% and adds 26px padding*/
+  .contact main section:nth-child(3) {
+    width: 70%;
+    padding: 26px;
+  }
+}
+
+/***********************/
+/***** footer.html *****/
+/***********************/
+
+/******************/
+/* Footer Styling */
+/******************/
+
+/*Displays flex for the footer and aligns text to the center Makes the background color white*/
+footer {
+  display: flex;
+  text-align: center;
+  height: auto;
+  background-color: #fff;
+}
+/*Makes the image width 10%*/
+footer div a img{
+  width: 10%;
+  height: auto;
+}
+/*Adds flex to the nav and adds space around the social media icons and the site links*/
+footer div nav{
+  display: flex;
+  justify-content: space-around;
+  padding-right: 20px;
+}
+/*Displays flex for the nav div and aligns text to the center with a 10% width*/
+footer div nav div{
+  width: 10%;
+  display: flex;
+  align-items: center;
+}
+/*Makes the image sit at the top with a 80% width*/
+footer div nav div a img{
+  display: flex;
+  justify-content: flex-start;
+  padding-right: 20px;
+  width: 80%;
+}
+/*Displays the nav horizontally and removes its list styling*/
+footer div nav ul{
+  display: flex;
+  list-style: none;
+  align-items: center;
+  padding: 0px;
+}
+/*Adds some space between each nav button*/
+footer div nav ul li{
+  padding: 0px 10px;
+}
+/*Removes the underline and makes the text black*/
+footer div nav ul li a{
+  text-decoration: none;
+  color: #000;
+}
+
+/***************************/
+/*Footer Responsive Styling*/
+/***************************/
+
+/*Adjusts the 1200 pixel width*/
+@media screen and (max-width: 1200px){
+  footer div a img{
+    /*Makes the width 15%*/
+    width: 15%
+  }
+  /*Resets the padding to 0px*/
+  footer div nav{
+    padding: 0px;
+  }
+}
+
+/*Adjusts the 1024 pixel width*/
+@media screen and (max-width: 1024px){
+  /*None Needed*/
+}
+
+/*Adjusts the 768 pixel width*/
+@media screen and (max-width: 768px){
+  /*Resizes the image to 20% width*/
+  footer div a img{
+    width: 20%
+  }
+  /*Resizes to 20% width*/
+  footer div nav div{
+    width:20%;
+  }
+}
+
+/*Adjusts the 600 pixel width*/
+@media screen and (max-width: 600px){
+  /*None Needed*/
+}
+
+/*Adjusts the 480 pixel width*/
+@media screen and (max-width: 480px){
+  /*Resizes the image to 30% width*/
+  footer div a img{
+    width: 30%;
+  }
+  /*Makes the footer a column instead of rows and positions the elements*/
+  footer div nav{
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: -50px;
+    margin-bottom: 20px;
+  }
+  /*Makes teh width 30%*/
+  footer div nav div{
+    width: 30%;
+  }
+}
+
+/*Adjusts the 320 pixel width*/
+@media screen and (max-width: 320px){
+  /*Makes the image width 40%*/
+  footer div a img{
+    width: 40%;
+  }
+  /*Makes the width 40%*/
+  footer div nav div{
+    width: 40%;
+  }
+}
+
+/*********************/
+/*Interactive Styling*/
+/*********************/
+
+/*Whatever element I add this class to will grow only when hovering over it*/
+.grow {
+transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+transform: scale(1.1);
+}
